@@ -1,0 +1,248 @@
+/* Global Section Layout */
+.homepage section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url('/hero.jpg') center/cover no-repeat;
+  color: rgb(187, 233, 134);
+  padding: 8rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-shadow: 3px 1px 5px rgb(29, 28, 28);
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 5rem;
+}
+
+.hero-text p {
+  color: #d5f0c8;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+/* Reusable Buttons */
+.btn, .cta-btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 53, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn.primary {
+  background: #385321;
+  color: rgb(216, 246, 208);
+}
+
+.btn.dark {
+  background-color: #2f4723;
+  color: white;
+}
+
+.btn:hover, .cta-btn:hover {
+  opacity: 0.9;
+}
+
+.cta-btn {
+  background-color: #416e3d;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 4px 12px rgba(8, 37, 23, 0.4);
+}
+
+.cta-btn:hover {
+  background-color: #20501c;
+}
+
+/* Section Headings (merged) */
+.why-us h2,
+.app-section h2,
+.testimonials h2,
+.process-section h2,
+.partners h2 {
+  color: var(--text-color);
+}
+
+/* Featured Dishes */
+.featured-dishes .dish-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Why Us Section */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.why-box {
+  background: var(--secondary-color);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+}
+
+/* App Section */
+.app-section {
+  color: var(--text-color);
+}
+
+.app-section .app-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Testimonials */
+.testimonial-grid {
+  display: flex;
+  gap: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.testimonial-card {
+  width: 250px;
+  background: var(--secondary-color);
+  box-shadow: var(--shadow);
+  font-weight: 400;
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-style: italic;
+}
+
+/* Order Process Section */
+.process-section .steps {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.steps li {
+  background: var(--secondary-color);
+  margin-bottom: 1rem;
+  padding: 1rem;
+  font-weight: 600;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Partners Section */
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.partner-logos img {
+  height: 70px;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter 0.3s;
+}
+
+.partner-logos img:hover {
+  filter: grayscale(0%);
+}
+
+/* Final CTA */
+.final-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  margin: 3rem 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  gap: 1rem;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.final-cta img.cta-image {
+  height: 60px;
+  border-radius: 1rem;
+}
+
+.cta-content {
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.2rem;
+  color: #2b543b;
+  margin-bottom: 0.5rem;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: #2c3f31;
+  margin-bottom: 1.5rem;
+}
+
+/* Animations */
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeDown 0.8s ease-out forwards;
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.delay-1,
+.delay-2 {
+  animation-delay: 2s;
+}
+
+.delay-3 {
+  animation-delay: 2.2s;
+}
+
+.delay-4 {
+  animation-delay: 2.4s;
+}
+
+@keyframes fadeDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
