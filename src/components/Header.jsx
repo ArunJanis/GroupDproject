@@ -13,6 +13,7 @@ const Header = () => {
        
         <Link to="/" className="logo"><span>BiteBolt</span></Link>
         <nav className="nav-links">
+        <nav className="nav-links">
           <NavLink to="/" end className="nav-link">Home</NavLink>
           <NavLink to="/about" className="nav-link">About</NavLink>
           <NavLink to="/contact" className="nav-link">Contact</NavLink>
