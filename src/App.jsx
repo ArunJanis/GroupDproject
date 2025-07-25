@@ -1,28 +1,25 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-// import DarkModeToggle from './components/DarkModeToggle';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import './App.css';
+import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Dashboard from "./Pages/Dashboard";
+import LoginForm from "./components/LoginForm";
 
 function App() {
+  const [user, setUser] = useState(null); // For login/logout
+
   return (
-    <Router>
-      <div className="app">
-        {/* <DarkModeToggle /> */}
-        <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </Router>
+    <>
+      <Routes>
+        <Route path="/" element={<Home user={user} />} />
+        <Route path="/login" element={<LoginForm setUser={setUser} />} />
+        <Route
+          path="/dashboard"
+          element={
+            user ? <Dashboard user={user} /> : <LoginForm setUser={setUser} />
+          }
+        />
+      </Routes>
+    </>
   );
 }
 
