@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+
+import React from 'react';
 import './FeaturedDishes.css';
+import { useNavigate } from 'react-router-dom';
+
 
 const foodItems = [
   // Biryani Variants
@@ -71,29 +74,34 @@ const foodItems = [
   { id: 50, name: "Deluxe Thali", image: "/dishes/smbr.png", price: "₹299" },
 ];
 
+
+function shuffleArray(array) {
+  return [...array].sort(() => Math.random() - 0.5);
+}
+
 function FeaturedDishes() {
-  const [orderedItem, setOrderedItem] = useState(null);
+  const [shuffledDishes] = React.useState(() => shuffleArray(foodItems));
+  const navigate = useNavigate();
+
+  const handleOrder = (dish) => {
+    navigate('/order-success', { state: { dishName: dish.name } });
+  };
 
   return (
     <section className="featured-dishes">
       <h2>Today's Menu</h2>
       <div className="dish-grid">
-        {foodItems.map((dish) => (
+        {shuffledDishes.map((dish) => (
           <div key={dish.id} className="dish-card">
             <img src={dish.image} alt={dish.name} />
             <h3>{dish.name}</h3>
             <p>{dish.price}</p>
-            <button className="btn primary" onClick={() => setOrderedItem(dish.name)}>
+            <button className="btn primary" onClick={() => handleOrder(dish)}>
               Order Me Now
             </button>
           </div>
         ))}
       </div>
-      {orderedItem && (
-        <div style={{ marginTop: "2rem", color: "#2f4723", fontWeight: "bold" }}>
-          ✅ You just ordered: <span style={{ color: "green" }}>{orderedItem}</span>
-        </div>
-      )}
     </section>
   );
 }
