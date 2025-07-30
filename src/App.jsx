@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Dashboard from "./Pages/Dashboard";
+import Home from "./pages/Home";
+import Dashboard from "./pages/Dashboard";
 import LoginForm from "./components/LoginForm";
+import OrderSuccess from "./pages/OrderSuccess"; // 👈 import this
+
 
 function App() {
   const [user, setUser] = useState(null); // For login/logout
