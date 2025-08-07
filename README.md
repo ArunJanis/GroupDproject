@@ -1,4 +1,19 @@
-# React + Vite
+# SoftBite
+Food Delivery site create as a project for summerschool Internship.
+
+# How to run?
+```
+git clone --depth 1 "https://github.com/ArunJanis/GroupDproject"
+cd GroupDproject
+
+// First run the server
+node server.cjs
+
+// Then run the react app
+npm dev run
+```
+
+#  React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
